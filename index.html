@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>N-Shell — Minimal Unix Shell in C</title>
 
     <meta
         name="description"
-        content="N-Shell is a minimal Unix shell written in C featuring process execution, pipes, redirection, built-ins, and signal handling."
+        content="N-Shell is a minimal Unix shell written in C featuring process execution, pipes, I/O redirection, built-ins, and signal handling."
     >
 
     <link rel="stylesheet" href="style.css">
@@ -18,6 +22,7 @@
 
 <header class="navbar">
     <div class="container nav-content">
+
         <a href="#" class="logo">
             <span class="logo-symbol">&gt;_</span>
             N-Shell
@@ -37,6 +42,7 @@
                 GitHub
             </a>
         </nav>
+
     </div>
 </header>
 
@@ -46,6 +52,7 @@
     <!-- HERO -->
 
     <section class="hero">
+
         <div class="container hero-grid">
 
             <div class="hero-copy">
@@ -60,9 +67,9 @@
                 </h1>
 
                 <p class="hero-description">
-                    N-Shell is a small Unix shell written in C to explore
-                    process management, file descriptors, pipes, redirection,
-                    and signal handling.
+                    N-Shell is a small Unix shell written in C
+                    to demonstrate my understanding of low-level
+                    programming and Linux operating system internals.
                 </p>
 
                 <div class="hero-buttons">
@@ -76,7 +83,7 @@
                     </a>
 
                     <a
-                        href="https://github.com/YOUR_USERNAME/n-shell"
+                        href="https://github.com/1hellb9y/N_SHELL/"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="button secondary"
@@ -105,46 +112,94 @@
                         <span></span>
                     </div>
 
-                    <span class="terminal-title">N-Shell</span>
+                    <span class="terminal-title">
+                        N-Shell
+                    </span>
 
                 </div>
 
-                <div class="terminal-body" id="terminal">
+
+                <div class="terminal-body">
 
                     <div class="terminal-line">
-                        <span class="prompt">N-shell&gt;</span>
-                        <span> echo "hello world" &gt; output.txt</span>
+                        <span class="prompt">
+                            N-shell&gt;
+                        </span>
+
+                        <span>
+                            echo hello &gt; output.txt
+                        </span>
                     </div>
 
+
                     <div class="terminal-line">
-                        <span class="prompt">N-shell&gt;</span>
-                        <span> cat output.txt</span>
+                        <span class="prompt">
+                            N-shell&gt;
+                        </span>
+
+                        <span>
+                            echo world &gt;&gt; output.txt
+                        </span>
+                    </div>
+
+
+                    <div class="terminal-line">
+                        <span class="prompt">
+                            N-shell&gt;
+                        </span>
+
+                        <span>
+                            cat output.txt
+                        </span>
+                    </div>
+
+
+                    <div class="terminal-output">
+                        hello
                     </div>
 
                     <div class="terminal-output">
-                        hello world
+                        world
                     </div>
 
+
                     <div class="terminal-line">
-                        <span class="prompt">N-shell&gt;</span>
-                        <span> cat output.txt | wc -w</span>
+                        <span class="prompt">
+                            N-shell&gt;
+                        </span>
+
+                        <span>
+                            ls | grep ".c"
+                        </span>
                     </div>
+
 
                     <div class="terminal-output">
-                        2
+                        shell.c
                     </div>
 
+
                     <div class="terminal-line">
-                        <span class="prompt">N-shell&gt;</span>
-                        <span> sleep 10</span>
+                        <span class="prompt">
+                            N-shell&gt;
+                        </span>
+
+                        <span>
+                            sleep 10
+                        </span>
                     </div>
+
 
                     <div class="terminal-output">
                         ^C
                     </div>
 
+
                     <div class="terminal-line">
-                        <span class="prompt">N-shell&gt;</span>
+                        <span class="prompt">
+                            N-shell&gt;
+                        </span>
+
                         <span class="cursor"></span>
                     </div>
 
@@ -153,17 +208,24 @@
             </div>
 
         </div>
+
     </section>
 
 
     <!-- FEATURES -->
 
-    <section class="section" id="features">
+    <section
+        class="section"
+        id="features"
+    >
 
         <div class="container">
 
             <div class="section-heading">
-                <span class="section-label">FEATURES</span>
+
+                <span class="section-label">
+                    FEATURES
+                </span>
 
                 <h2>
                     Small shell.
@@ -171,100 +233,149 @@
                 </h2>
 
                 <p>
-                    The project focuses on core operating-system concepts
-                    rather than attempting to replace a production shell.
+                    N-Shell focuses on the low-level mechanisms
+                    behind command execution in a Unix environment.
                 </p>
+
             </div>
 
 
             <div class="features-grid">
 
-                <article class="feature-card">
-                    <div class="feature-icon">01</div>
+                <!-- PROCESS EXECUTION -->
 
-                    <h3>Process execution</h3>
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        01
+                    </div>
+
+                    <h3>
+                        Process execution
+                    </h3>
 
                     <p>
-                        Executes external programs using
+                        External programs are executed using
                         <code>fork()</code>,
                         <code>execvp()</code>, and
                         <code>waitpid()</code>.
                     </p>
+
                 </article>
 
 
-                <article class="feature-card">
-                    <div class="feature-icon">02</div>
+                <!-- PIPELINES -->
 
-                    <h3>Pipelines</h3>
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        02
+                    </div>
+
+                    <h3>
+                        Pipelines
+                    </h3>
 
                     <p>
-                        Connects commands using
-                        <code>pipe()</code> and
+                        Commands communicate through Unix pipes
+                        using <code>pipe()</code> and
                         <code>dup2()</code>.
                     </p>
 
                     <div class="mini-code">
                         ls | grep ".c"
                     </div>
+
                 </article>
 
 
-                <article class="feature-card">
-                    <div class="feature-icon">03</div>
+                <!-- REDIRECTION -->
 
-                    <h3>Redirection</h3>
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        03
+                    </div>
+
+                    <h3>
+                        I/O Redirection
+                    </h3>
 
                     <p>
-                        Supports standard input, output, and append
-                        redirection using Unix file descriptors.
+                        Redirect standard input and output using
+                        Unix file descriptors.
                     </p>
 
                     <div class="mini-code">
                         &lt; &nbsp; &gt; &nbsp; &gt;&gt;
                     </div>
+
                 </article>
 
 
-                <article class="feature-card">
-                    <div class="feature-icon">04</div>
+                <!-- SIGNALS -->
 
-                    <h3>Signal handling</h3>
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        04
+                    </div>
+
+                    <h3>
+                        Signal handling
+                    </h3>
 
                     <p>
                         Handles <code>SIGINT</code> so
-                        <strong>Ctrl+C</strong> terminates the running command
-                        without terminating N-Shell.
+                        <strong>Ctrl+C</strong> terminates the
+                        running command without terminating N-Shell.
                     </p>
+
                 </article>
 
 
-                <article class="feature-card">
-                    <div class="feature-icon">05</div>
+                <!-- BUILT INS -->
 
-                    <h3>Built-ins</h3>
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        05
+                    </div>
+
+                    <h3>
+                        Built-in commands
+                    </h3>
 
                     <p>
-                        Includes shell-specific commands that must execute
-                        directly inside the parent process.
+                        Includes commands that execute directly
+                        inside the parent shell process.
                     </p>
 
                     <div class="mini-code">
                         cd &nbsp;&nbsp; exit
                     </div>
+
                 </article>
 
 
-                <article class="feature-card">
-                    <div class="feature-icon">06</div>
+                <!-- LOW LEVEL -->
 
-                    <h3>Error handling</h3>
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        06
+                    </div>
+
+                    <h3>
+                        Low-level programming
+                    </h3>
 
                     <p>
-                        Handles failures from system calls including
-                        <code>fork()</code>, <code>open()</code>,
-                        <code>dup2()</code>, and <code>execvp()</code>.
+                        Built around Linux/POSIX system calls,
+                        processes, file descriptors, signals,
+                        and inter-process communication.
                     </p>
+
                 </article>
 
             </div>
@@ -276,59 +387,142 @@
 
     <!-- ARCHITECTURE -->
 
-    <section class="section architecture-section" id="architecture">
+    <section
+        class="section architecture-section"
+        id="architecture"
+    >
 
         <div class="container">
 
             <div class="section-heading">
-                <span class="section-label">UNDER THE HOOD</span>
 
-                <h2>How N-Shell executes a command.</h2>
+                <span class="section-label">
+                    UNDER THE HOOD
+                </span>
+
+                <h2>
+                    How N-Shell executes a command.
+                </h2>
+
+                <p>
+                    A command moves through several low-level
+                    operating system operations before it starts
+                    executing.
+                </p>
+
             </div>
 
 
             <div class="architecture">
 
                 <div class="architecture-step">
-                    <span>01</span>
-                    <strong>Parse</strong>
-                    <p>Read and tokenize user input.</p>
+
+                    <span>
+                        01
+                    </span>
+
+                    <strong>
+                        Parse
+                    </strong>
+
+                    <p>
+                        Read and tokenize the user's command.
+                    </p>
+
                 </div>
 
-                <div class="arrow">→</div>
 
-                <div class="architecture-step">
-                    <span>02</span>
-                    <strong>fork()</strong>
-                    <p>Create a child process.</p>
+                <div class="arrow">
+                    →
                 </div>
 
-                <div class="arrow">→</div>
 
                 <div class="architecture-step">
-                    <span>03</span>
-                    <strong>dup2()</strong>
-                    <p>Configure pipes and redirection.</p>
+
+                    <span>
+                        02
+                    </span>
+
+                    <strong>
+                        fork()
+                    </strong>
+
+                    <p>
+                        Create a new child process.
+                    </p>
+
                 </div>
 
-                <div class="arrow">→</div>
 
-                <div class="architecture-step">
-                    <span>04</span>
-                    <strong>execvp()</strong>
-                    <p>Replace the child with the command.</p>
+                <div class="arrow">
+                    →
                 </div>
 
-                <div class="arrow">→</div>
 
                 <div class="architecture-step">
-                    <span>05</span>
-                    <strong>waitpid()</strong>
-                    <p>Wait for the process to finish.</p>
+
+                    <span>
+                        03
+                    </span>
+
+                    <strong>
+                        dup2()
+                    </strong>
+
+                    <p>
+                        Configure pipes and file redirection.
+                    </p>
+
+                </div>
+
+
+                <div class="arrow">
+                    →
+                </div>
+
+
+                <div class="architecture-step">
+
+                    <span>
+                        04
+                    </span>
+
+                    <strong>
+                        execvp()
+                    </strong>
+
+                    <p>
+                        Replace the child process with the program.
+                    </p>
+
+                </div>
+
+
+                <div class="arrow">
+                    →
+                </div>
+
+
+                <div class="architecture-step">
+
+                    <span>
+                        05
+                    </span>
+
+                    <strong>
+                        waitpid()
+                    </strong>
+
+                    <p>
+                        Wait for the process to finish.
+                    </p>
+
                 </div>
 
             </div>
 
+
+            <!-- PIPE EXAMPLE -->
 
             <div class="pipe-example">
 
@@ -336,22 +530,49 @@
                     Example pipeline
                 </div>
 
+
                 <div class="pipeline">
 
                     <div class="process">
-                        <span>Process A</span>
-                        <strong>cat file.txt</strong>
+
+                        <span>
+                            Process A
+                        </span>
+
+                        <strong>
+                            ls
+                        </strong>
+
                     </div>
+
 
                     <div class="pipe-connection">
-                        <span>stdout</span>
-                        <div class="connection-line">──────→</div>
-                        <span>stdin</span>
+
+                        <span>
+                            stdout
+                        </span>
+
+                        <div class="connection-line">
+                            ──────→
+                        </div>
+
+                        <span>
+                            stdin
+                        </span>
+
                     </div>
 
+
                     <div class="process">
-                        <span>Process B</span>
-                        <strong>grep error</strong>
+
+                        <span>
+                            Process B
+                        </span>
+
+                        <strong>
+                            grep ".c"
+                        </strong>
+
                     </div>
 
                 </div>
@@ -365,51 +586,60 @@
 
     <!-- INSTALL -->
 
-    <section class="section" id="install">
+    <section
+        class="section"
+        id="install"
+    >
 
         <div class="container install-grid">
 
             <div>
 
-                <span class="section-label">INSTALL</span>
+                <span class="section-label">
+                    INSTALL
+                </span>
 
-                <h2>Try N-Shell locally.</h2>
+                <h2>
+                    Try N-Shell locally.
+                </h2>
 
                 <p class="install-description">
-                    Download the Linux binary or compile the project
-                    directly from source.
+                    Download the precompiled Linux binary,
+                    give it execution permission, and launch it
+                    directly from your terminal.
                 </p>
+
 
                 <a
                     href="downloads/nshell-linux-x86_64"
                     class="button primary"
                     download
                 >
-                    Download Linux Binary
+                    Download Linux x86_64
                 </a>
 
             </div>
 
 
+            <!-- INSTALL COMMANDS -->
+
             <div class="code-window">
 
                 <div class="code-window-header">
-                    Build from source
+                    Run N-Shell
                 </div>
 
-                <pre><code><span class="comment"># Clone the repository</span>
-git clone https://github.com/YOUR_USERNAME/n-shell.git
 
-<span class="comment"># Enter the project</span>
-cd n-shell
-
-<span class="comment"># Build</span>
-make
+                <pre><code><span class="comment"># Give the binary execution permission</span>
+chmod +x nshell-linux-x86_64
 
 <span class="comment"># Start N-Shell</span>
-./nshell</code></pre>
+./nshell-linux-x86_64</code></pre>
 
-                <button class="copy-button" id="copyButton">
+                <button
+                    class="copy-button"
+                    id="copyButton"
+                >
                     Copy
                 </button>
 
@@ -420,7 +650,7 @@ make
     </section>
 
 
-    <!-- LIMITATIONS -->
+    <!-- ABOUT PROJECT -->
 
     <section class="section scope-section">
 
@@ -429,28 +659,44 @@ make
             <div class="scope-box">
 
                 <div>
-                    <span class="section-label">PROJECT SCOPE</span>
 
-                    <h2>Intentionally minimal.</h2>
+                    <span class="section-label">
+                        PROJECT
+                    </span>
+
+                    <h2>
+                        Learning Linux from the inside.
+                    </h2>
 
                     <p>
-                        N-Shell is an educational systems-programming project
-                        focused on understanding how Unix shells interact with
-                        processes and file descriptors.
+                        I built N-Shell to demonstrate my understanding
+                        of low-level C programming and the operating
+                        system concepts behind Unix shells.
                     </p>
+
+                    <p>
+                        The project works directly with processes,
+                        file descriptors, signals, pipes, and Linux/POSIX
+                        system calls rather than hiding them behind
+                        higher-level abstractions.
+                    </p>
+
                 </div>
 
 
                 <div class="limitations">
 
-                    <span>Not currently supported</span>
+                    <span>
+                        Concepts used
+                    </span>
 
                     <ul>
-                        <li>Job control</li>
-                        <li>Shell scripting</li>
-                        <li>Wildcard expansion</li>
-                        <li>Environment variable expansion</li>
-                        <li>Complex quote parsing</li>
+                        <li>Processes</li>
+                        <li>System calls</li>
+                        <li>File descriptors</li>
+                        <li>Unix pipes</li>
+                        <li>Signals</li>
+                        <li>Inter-process communication</li>
                     </ul>
 
                 </div>
@@ -464,19 +710,29 @@ make
 </main>
 
 
+<!-- FOOTER -->
+
 <footer>
 
     <div class="container footer-content">
 
         <div>
-            <strong>N-Shell</strong>
-            <p>Minimal Unix shell written in C.</p>
+
+            <strong>
+                N-Shell
+            </strong>
+
+            <p>
+                Minimal Unix shell written in C.
+            </p>
+
         </div>
+
 
         <div class="footer-links">
 
             <a
-                href="https://github.com/YOUR_USERNAME/n-shell"
+                href="https://github.com/1hellb9y/N_SHELL/"
                 target="_blank"
                 rel="noopener noreferrer"
             >
